@@ -1,11 +1,3 @@
-# mrio-hhl-us-china-ext
-
-**Quantum-Accelerated Multi-Regional Input–Output Analysis of the US–China Embodied-Carbon Relationship via the HHL Algorithm**
-
-Megan Zhang — Quantum Analysis and Optics Lab, Thomas Jefferson High School for Science and Technology
-
----
-
 ## Overview
 
 This repository contains the full pipeline, data instructions, results, and
@@ -107,9 +99,9 @@ cd paper && pdflatex main.tex && pdflatex main.tex
 
 ---
 
-## Method in brief
+## Method tl;dr
 
-1. **Classical ground truth.** Build the Leontief system `(I − A) x = y` from
+1. **Classical baseline.** Build the Leontief system `(I − A) x = y` from
    real Eora data, regularise the handful of non-viable data-artifact micro-sectors,
    invert, and compute the consumption-based footprint `E = eᵀ (I − A)⁻¹ y`.
 2. **Quantum reproduction.** Recast the same system (its 4-sector real aggregate)
