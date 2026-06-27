@@ -1,0 +1,17 @@
+{
+  "spectral_radius": 0.9459196548684955,
+  "condition_number": 34.93355227808689,
+  "n_artifact": 33,
+  "results": {
+    "USA": {
+      "total_Gt": 6.442518157810952,
+      "in_other_Gt": 0.4669433333885058,
+      "domestic_Gt": 5.062205500082219
+    },
+    "CHN": {
+      "total_Gt": 8.27193172199884,
+      "in_other_Gt": 0.07524124344994434,
+      "domestic_Gt": 7.499817448184494
+    }
+  }
+}
