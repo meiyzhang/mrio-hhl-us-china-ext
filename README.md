@@ -1,12 +1,6 @@
 ## Overview
 
-This repository contains the full pipeline, data instructions, results, and
-LaTeX paper for a study that solves a real consumption-based carbon-accounting
-problem **two ways** — with a classical Leontief solve and with an explicitly
-constructed Harrow–Hassidim–Lloyd (HHL) quantum circuit — and compares them on
-genuine Eora26 2022 trade data.
-
-The headline results:
+This repository contains the full pipeline, data instructions, and results, testing the MRIO-HHL algorithm on a real consumption-based accounting problem.
 
 | Quantity | Value |
 |---|---|
@@ -19,8 +13,6 @@ The headline results:
 | HHL vs classical solution (4-sector subsystem), rel. L2 error | **4.3 %** |
 | HHL vs classical embodied-emission estimate, agreement | **86.7 %** |
 | HHL circuit | 12 qubits, depth 533 |
-
-See `results/FINAL_SUMMARY.json` for the machine-readable summary.
 
 ---
 
@@ -88,26 +80,15 @@ python 06_make_schematics.py  # -> figures/fig_mrio_block.png, fig_hhl_pipeline.
 
 Or simply `make all` from the repo root.
 
-### 4. Build the paper
-
-Upload `paper/main.tex` and `paper/images/` to Overleaf (the `ieeeconf` class is
-bundled there) and compile with pdfLaTeX, or locally:
-
-```bash
-cd paper && pdflatex main.tex && pdflatex main.tex
-```
-
----
-
 ## Method tl;dr
 
-1. **Classical baseline.** Build the Leontief system `(I − A) x = y` from
-   real Eora data, regularise the handful of non-viable data-artifact micro-sectors,
+1. Build the Leontief system `(I − A) x = y` from
+  Eora data, regularise the handful of non-viable data-artifact micro-sectors,
    invert, and compute the consumption-based footprint `E = eᵀ (I − A)⁻¹ y`.
-2. **Quantum reproduction.** Recast the same system (its 4-sector real aggregate)
+2. Recast the same system (its 4-sector real aggregate)
    as a Hermitian linear-systems problem and solve it on an HHL circuit, reading
    the scalar emission aggregate `⟨e⟩` as a quantum expectation value.
-3. **Compare.** Report agreement, characterise the residual error, and measure
+3. Report agreement, characterise the residual error, and measure
    the condition number that governs scaling to the full system.
 
 ---
